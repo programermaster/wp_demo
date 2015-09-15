@@ -20,3 +20,6 @@ of the widget, so don't try hard-coding values here.
 -->
 <label for="[+title.id+]">Title</label><br/>
 <input id="[+title.id+]" name="[+title.name+]" value="[+title.value+]" /><br/>
+
+<label for="[+seconds_shelf_life.id+]">Shelf Life (in seconds)</label><br/>
+<input id="[+seconds_shelf_life.id+]" name="[+seconds_shelf_life.name+]" value="[+seconds_shelf_life.value+]" />

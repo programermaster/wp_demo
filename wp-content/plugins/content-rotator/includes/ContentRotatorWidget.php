@@ -14,7 +14,10 @@ class ContentRotatorWidget extends WP_Widget
     default value.
     The values can be distinct for each instance of the
     widget. */
-    public $control_options = array('title' => 'Content Rotator',);
+    public $control_options = array(
+        'title' => 'Content Rotator',
+        'seconds_shelf_life' => 86400, // 86400 seconds in a day
+        );
 
 //!!! Magic Functions
 // The constructor.
@@ -44,9 +47,25 @@ class ContentRotatorWidget extends WP_Widget
     of the widget
      * @return none No direct output. This should instead print output
     directly.
-     */function widget($args, $instance)
+     */
+    function widget($args, $instance)
     {
-        print "Hi, I'm a sneezing unicorn.";
+
+        if ( !isset($instance['manufacture_date'])  || time() >= ($instance['manufacture_date'] + $instance['seconds_shelf_life'] ) ) {
+            $instance['content'] = ContentRotator::get_random_content($instance);
+            $instance['manufacture_date'] = time();
+
+            $all_instances = $this->get_settings();
+            $all_instances[$this->number] = $instance;
+            //die($this->number."a");
+            $this->save_settings($all_instances);
+        }
+       // print "Hi, I'm a sneezing unicorn.";
+        $placeholders = array_merge($args, $instance);
+
+        $tpl = file_get_contents( dirname(dirname(__FILE__)) .'/tpls/widget.tpl');
+
+        print ContentRotator::parse($tpl, $placeholders);
     }
 
     /**
