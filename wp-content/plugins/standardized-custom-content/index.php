@@ -11,6 +11,7 @@ Based on work by Steve Taylor:
 http://sltaylor.co.uk/blog/control-your-own-wordpress-custom-fields/
 */
 include_once('includes/StandardizedCustomContent.php');
+
 add_action( 'do_meta_boxes', 'StandardizedCustomContent::remove_default_custom_fields', 10, 3 );
 
 add_action( 'admin_menu', 'StandardizedCustomContent::create_meta_box' );

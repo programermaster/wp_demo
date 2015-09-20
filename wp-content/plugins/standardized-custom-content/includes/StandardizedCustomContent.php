@@ -169,15 +169,17 @@ class StandardizedCustomContent
         $content_types_array = self::_get_active_content_types();
         foreach ($content_types_array as $content_type) {
             add_meta_box('my-custom-fields', 'Custom Fields', 'StandardizedCustomContent::print_custom_fields', $content_type, 'normal', 'high', $content_type);
+            //add_meta_box('ch2pho_general_meta_box',  'General Settings', 'ch2pho_plugin_meta_box',    $options_page, 'normal', 'core');
 
         }
     }
 
     public static function print_custom_fields($post, $callback_args='')
     {
-        $content_type = $callback_args['args']; // the 7th arg from add_        meta_box()
+        $content_type = $callback_args['args']; // the 7th arg from add_meta_box()
         $custom_fields = self::_get_custom_fields($content_type);
         $output = '';
+
         foreach ( $custom_fields as $field ) {
             $output_this_field = '';
 
@@ -209,6 +211,7 @@ class StandardizedCustomContent
 
             $output .= '<div class="form-field form-required">' . $output_this_field . '</div>';
         }
+
         // Print the form
         print '<div class="form-wrap">';
         wp_nonce_field('update_custom_content_fields','custom_content_fields_nonce');
