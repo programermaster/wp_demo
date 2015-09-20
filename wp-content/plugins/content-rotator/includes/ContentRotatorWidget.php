@@ -25,7 +25,7 @@ class ContentRotatorWidget extends WP_Widget
     {
         $widget_options = array(
             'classname'  => __CLASS__,
-            'description' => $this->widget_desc,
+            'description' => $this->description,
         );
         parent::__construct( __CLASS__, $this->name, $widget_options, $this->control_options);
     }

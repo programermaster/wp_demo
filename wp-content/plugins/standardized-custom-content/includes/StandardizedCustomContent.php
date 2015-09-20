@@ -232,6 +232,7 @@ class StandardizedCustomContent
     The post object
      */
     public static function save_custom_fields( $post_id, $post ) {
+
 // The 2nd arg here is important because there are multiple        nonces on the page
         if ( !empty($_POST) && check_admin_referer('update_custom_content_fields','custom_content_fields_nonce') )
         {
