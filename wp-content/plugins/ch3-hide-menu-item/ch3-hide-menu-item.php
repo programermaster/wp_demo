@@ -14,5 +14,5 @@ function ch3hmi_hide_menu_item() {
     //remove users menu item
    //remove_menu_page( 'users.php' );
 
-    remove_submenu_page( 'options-general.php',        'options-permalink.php' );
+    //remove_submenu_page( 'options-general.php',        'options-permalink.php' );
 }

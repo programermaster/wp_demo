@@ -98,6 +98,40 @@ function ch2pho_settings_menu() {
         add_action( 'load-' . $options_page, 'ch2pho_help_tabs' );
 }
 
+function ch2pho_help_tabs()
+{
+    global $options_page;
+
+    $screen = get_current_screen();
+    $screen->add_help_tab(array(
+        'id' => 'ch2pho-plugin-help-instructions',
+        'title' => 'Instructions',
+        'callback' => 'ch2pho_plugin_help_instructions'
+    ));
+    $screen->add_help_tab(array(
+        'id' => 'ch2pho-plugin-help-faq',
+        'title' => 'FAQ',
+        'callback' => 'ch2pho_plugin_help_faq',
+    ));
+
+    $screen->set_help_sidebar( '<p>This is the sidebar content</p>' );
+
+    // add_meta_box( $id, $title, $callback, $page, $context, $priority,        $callback_args );
+    add_meta_box('ch2pho_general_meta_box',  'General Settings', 'ch2pho_plugin_meta_box',    $options_page, 'normal', 'core');
+
+    add_meta_box('ch2pho_second_meta_box', 'Second Settings Section', 'ch2pho_second_meta_box',    $options_page, 'normal', 'core');
+}
+
+function ch2pho_plugin_help_instructions() { ?>
+    <p>These are instructions explaining how to use this
+        plugin.</p>
+<?php }
+
+function ch2pho_plugin_help_faq() { ?>
+    <p>These are the most frequently asked questions on the use of
+        this plugin.</p>
+<?php }
+
 /*function ch2pho_config_page() {
 // Retrieve plugin configuration options from database
     $options = get_option( 'ch2pho_options' );
@@ -218,43 +252,11 @@ function process_ch2pho_options()
 
 }
 
-function ch2pho_help_tabs()
-{
-    global $options_page;
 
-    $screen = get_current_screen();
-    $screen->add_help_tab(array(
-        'id' => 'ch2pho-plugin-help-instructions',
-        'title' => 'Instructions',
-        'callback' => 'ch2pho_plugin_help_instructions'
-    ));
-    $screen->add_help_tab(array(
-        'id' => 'ch2pho-plugin-help-faq',
-        'title' => 'FAQ',
-        'callback' => 'ch2pho_plugin_help_faq',
-    ));
-
-    $screen->set_help_sidebar( '<p>This is the sidebar content</p>' );
-
-   // add_meta_box( $id, $title, $callback, $page, $context, $priority,        $callback_args );
-    add_meta_box('ch2pho_general_meta_box',  'General Settings', 'ch2pho_plugin_meta_box',    $options_page, 'normal', 'core');
-
-    add_meta_box('ch2pho_second_meta_box', 'Second Settings Section', 'ch2pho_second_meta_box',    $options_page, 'normal', 'core');
-}
-
-function ch2pho_plugin_help_instructions() { ?>
-    <p>These are instructions explaining how to use this
-        plugin.</p>
-<?php }
-
-function ch2pho_plugin_help_faq() { ?>
-    <p>These are the most frequently asked questions on the use of
-        this plugin.</p>
-<?php }
 
 
 //add_action( 'admin_enqueue_scripts', 'ch2pho_load_admin_scripts' );
-add_action( 'init', 'ch2pho_load_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'ch2pho_load_admin_scripts' );
 function ch2pho_load_admin_scripts() {
     global $current_screen;
     global $options_page;
