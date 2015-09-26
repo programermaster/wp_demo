@@ -26,6 +26,10 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', get_post_format() ); ?>
 
+				<?php ch5_psl_display_source_link(); ?>
+
+				<?php ch5_cfu_display_pdf_link(); ?>
+
 				<p><strong>Gender:</strong> <?php print_custom_field('gender');?></p>
 
 				<?php
