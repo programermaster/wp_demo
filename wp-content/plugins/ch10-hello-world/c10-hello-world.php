@@ -74,8 +74,5 @@ function ch10hw_hello_world_shortcode() {
 
 add_action( 'init', 'ch10hw_plugin_init' );
 function ch10hw_plugin_init() {
-    load_plugin_textdomain( 'ch10hw_hello_world',
-        false,
-        dirname( plugin_basename( __FILE__ ) )
-        . '/languages' );
+    load_plugin_textdomain( 'ch10hw_hello_world', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }

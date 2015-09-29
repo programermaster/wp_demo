@@ -56,6 +56,7 @@ define('LOGGED_IN_SALT',   'R2iI.|~Z#k0=EdBC,1j) w.)HlZ5,m@go<Up/yY>|&)L}|YYfAIS
 define('NONCE_SALT',       'K4o]DtTC7[.<jt.C1(L-=-dDTP+u>V)y]0kdiU5Xi8P-j&12`BS)B2JAla|wojZ ');
 define('WP_MEMORY_LIMIT', '128M');
 define( 'WP_DEBUG', true );
+define('WPLANG', 'fr_FR');
 /**#@-*/
 
 /**
