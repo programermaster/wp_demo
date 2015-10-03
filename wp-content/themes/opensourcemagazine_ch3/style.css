@@ -1,11 +1,14 @@
 /*
-Theme Name: Open Source Online Magazine chapter 4
+Theme Name: Open Source Online Magazine chapter 6
 Theme URI: http://rachelmccollin.co.uk/opensourcemagazine
+Description: Theme to accompany WordPress 3.4 Theme Development
+Beginners Guide Chapter 6
 Author: Tessa Blakeley Silver / Rachel McCollin
 Author URI: http://rachelmccollin.co.uk/
-Description: Theme to accompany WordPress 3.4 Theme Development Beginners Guide
-Version: 
-Tags: 
+Version: 1.0
+Tags: Black, blue, dark, responsive, magazine
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
@@ -24,6 +27,12 @@ be sure to add your font stacks and major font colors here
 
 /*@font-face loads*/
 
+
+/* hide home page title *//*
+.home h2.post-title {
+	display: none;
+}
+*/
 
 
 body{font-family: 'Trebuchet MS', Helvetica, Arial, Verdana, sans-serif; font-size: 0.9em; color: #ccc; background-color: #222;}
