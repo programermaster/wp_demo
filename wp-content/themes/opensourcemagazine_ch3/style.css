@@ -1,5 +1,5 @@
 /*
-Theme Name: Open Source Online Magazine chapter 3
+Theme Name: Open Source Online Magazine chapter 4
 Theme URI: http://rachelmccollin.co.uk/opensourcemagazine
 Author: Tessa Blakeley Silver / Rachel McCollin
 Author URI: http://rachelmccollin.co.uk/
@@ -250,6 +250,11 @@ behavior: url(css/PIE.htc);}
 -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)
 behavior: url(css/PIE.htc);}
+
+/*sidebar lists*/
+aside li {list-style-type: none;}
+
+
 
 /*emboseed text - will not render in IE!*/
 .embossed{text-shadow: rgba(0,0,0,0.1) 0 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.2) 0 1px, rgba(0,0,0,0.3) 0 -1px;}

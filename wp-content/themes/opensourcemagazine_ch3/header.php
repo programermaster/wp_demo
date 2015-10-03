@@ -20,7 +20,7 @@
 <link media="all" rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 
 <!--//javascripts-->
-<script src="js/modernizr.custom.20796.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.20796.js"></script>
 
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,20 +32,17 @@
 <body <?php body_class(); ?>>
 <div id="container">
 <header class="">
-<hgroup class="screen-reader-text">
-	<h1>OpenSource</h1>
-    <h2>Online Magazine</h2>
-
-    <p><em>Using Open Source for work and play</em></p>
-    </hgroup>
+	<hgroup class="screen-reader-text">
+		<h1 id="site-title">
+			<a href="<?php bloginfo('url'); ?>" title="<?php
+			bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
+		</h1>
+		<h2 id="site-description"><?php bloginfo( 'description' ); ?></
+		h2>
+	</hgroup>
 </header>
 
-<nav id="mainNav" class="grd-vt-tertiary shdw-centered">
-	<h2 class="screen-reader-text">Main Navigation:</h2>
-		<ul class="sfTab">
-			<li class="current_page_item"><a href="#">The Zine</a></li>
-			<li><a href="#">About Us</a></li>
-			<li><a href="#">Resources</a></li>
-			<li><a href="#">Contact</a></li>
-</ul>
-</nav><!--//top_navlist-->
+	<nav id="mainNav" class="grd-vt-tertiary shdw-centered">
+		<h2 class="screen-reader-text">Main Navigation:</h2>
+		<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container_class' => 'sfTab' ) ); ?>
+	</nav><!--//top_navlist-->
